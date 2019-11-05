@@ -60,5 +60,5 @@ class User extends BaseUser
     {
         $this->id = $id;
     }
-    
+
 }
