@@ -22,6 +22,16 @@ class Articles
     private $title;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $subtitle;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mainImage;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
@@ -84,6 +94,39 @@ class Articles
     {
         $this->title = $title;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSubtitle()
+    {
+        return $this->subtitle;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setSubtitle($subtitle): void
+    {
+        $this->subtitle = $subtitle;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMainImage()
+    {
+        return $this->mainImage;
+    }
+
+    /**
+     * @param mixed $mainImage
+     */
+    public function setMainImage($mainImage): void
+    {
+        $this->mainImage = $mainImage;
+    }
+
 
     /**
      * @return \DateTime

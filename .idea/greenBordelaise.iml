@@ -6,6 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bootstrap/css" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bootstrap/js" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/elfinder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/jquery" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/jqueryui" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
@@ -13,7 +16,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-cache-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
@@ -30,7 +32,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/fontawesome-free/webfonts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/helios-ag/fm-elfinder-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kriswallsmith/assetic" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
@@ -42,8 +46,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/robloach/component-installer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/studio-42/elfinder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/apache-pack" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/asset" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache" />

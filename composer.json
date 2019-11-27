@@ -7,7 +7,9 @@
         "ext-iconv": "*",
         "friendsofsymfony/ckeditor-bundle": "^2.1",
         "friendsofsymfony/user-bundle": "~2.0",
+        "helios-ag/fm-elfinder-bundle": "^9.3",
         "sensio/framework-extra-bundle": "^5.5",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "4.3.*",
         "symfony/console": "4.3.*",
         "symfony/dotenv": "4.3.*",
@@ -77,7 +79,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false,
+            "allow-contrib": "true",
             "require": "4.3.*"
         }
     }
