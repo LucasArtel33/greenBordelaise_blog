@@ -11,16 +11,16 @@
     <title>Green Bordelaise</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+{#    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">#}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="../public/assets/css/clean-blog.css" rel="stylesheet">
-    <link href="../public/assets/css/global.css" rel="stylesheet">
+    <link href="{{ asset ('assets/css/clean-blog.css') }}" rel="stylesheet">
+    <link href="{{ asset ('assets/css/global.css') }}" rel="stylesheet">
 
 </head>
 
@@ -43,13 +43,13 @@
                     <a class="nav-link" href="{{ path('editor') }}">editor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('post') }}">post</a>
+                    <a class="nav-link" href="{{ path('post',{'id' : 1}) }}">post</a> {# id de test #}
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Catégories</a>
                     <div class="dropdown-menu">
                         {% for category in categories %}
-                            <a class="dropdown-item" href="#">{{ category.name }}</a>
+                            <a class="dropdown-item" href="{{ path('category',{'id' : category.id}) }}">{{ category.name }}</a>
                         {% endfor %}
                     </div>
                 </li>
@@ -120,14 +120,17 @@
     </div>
 </footer>
 
-<script src="../public/bundles/fosckeditor/ckeditor.js"></script>
+<script src="{{ asset ('bundles/fosckeditor/ckeditor.js') }}"></script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="../vendor/jquery/jquery.min.js"></script>
-<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+{#<script src="../vendor/jquery/jquery.min.js"></script>#}
+{#<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>#}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <!-- Custom scripts for this template -->
-<script src="../public/assets/js/clean-blog.min.js"></script>
+<script src="{{ asset ('assets/js/clean-blog.min.js') }}"></script>
 
 </body>
 

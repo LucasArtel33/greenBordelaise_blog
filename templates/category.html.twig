@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% if articles == false %}
+                <h1>Il n'y a pas encore d'articles dans cette catégories</h1>
+            {% else %}
+                {% for article in articles %}
+                    <div class="post-preview">
+                        <a href="{{ path('post',{'id' : article.id}) }}">
+                            <h2 class="post-title">
+                                {{ article.title }}
+                            </h2>
+                            <h3 class="post-subtitle">
+                                {{ article.subtitle }}
+                            </h3>
+                        </a>
+                        <p class="post-meta">Posté par {{ article.user.username}} le {{ article.createdAt.date|date("m/d/Y \\à g\\hi") }}</p>
+                    </div>
+                    <hr>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

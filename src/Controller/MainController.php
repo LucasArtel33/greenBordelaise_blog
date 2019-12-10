@@ -57,6 +57,8 @@ class MainController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
+
+            return $this->redirectToRoute('editor');
         }
 
         return $this->render('editor.html.twig',
@@ -68,11 +70,11 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/post", name="post")
+     * @Route("/post/{id}", name="post")
      */
-    public function PostAction(Request $request)
+    public function PostAction(Request $request,$id)
     {
-        $id = 1; //id en dur le temps du travail
+        //$id = 1; //id en dur le temps du travail
         $user = $this->getUser();
 
         $rCat = $this->getDoctrine()->getRepository(Category::class);
@@ -108,6 +110,25 @@ class MainController extends AbstractController
                 'comments' => $comments,
                 'form' => $commentForm->createView(),
                 'user' => $user
+            ]
+        );
+    }
+
+    /**
+     * @Route("/categories/{id}", name ="category")
+     */
+    public function CategoryAction($id)
+    {
+        $rCat = $this->getDoctrine()->getRepository(Category::class);
+        $categories = $rCat->findAll();
+
+        $ra = $this->getDoctrine()->getRepository(Articles::class);
+        $articles = $ra->findBy(['category' => $id], ['createdAt' => 'desc'], 5);
+
+        return $this->render('category.html.twig',
+            [
+                'categories' => $categories,
+                'articles' => $articles
             ]
         );
     }
