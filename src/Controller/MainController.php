@@ -6,7 +6,6 @@ namespace App\Controller;
 use App\Entity\Articles;
 use App\Entity\Category;
 use App\Entity\Comment;
-use App\Entity\Image;
 use App\Form\ArticlesType;
 use App\Form\CommentType;
 use App\Form\ImageType;
@@ -22,13 +21,16 @@ class MainController extends AbstractController
     public function IndexAction()
     {
 
-        $repository = $this->getDoctrine()->getRepository(Category::class);
-        $categories = $repository->findAll();
+        $rCat = $this->getDoctrine()->getRepository(Category::class);
+        $categories = $rCat->findAll();
 
+        $ra = $this->getDoctrine()->getRepository(Articles::class);
+        $articles = $ra->findBy([], ['createdAt' => 'desc'], 5);
 
         return $this->render('index.html.twig',
             [
-                'categories' => $categories
+                'categories' => $categories,
+                'articles' => $articles
             ]
         );
     }
