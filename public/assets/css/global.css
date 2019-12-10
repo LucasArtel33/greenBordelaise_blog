@@ -1,0 +1,9 @@
+.btn-center{
+    display: block;
+    margin: auto;
+}
+
+.btn-right{
+    float: right;
+    margin-bottom: 2%;
+}

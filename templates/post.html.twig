@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+<header class="masthead" style="background-image: url('../assets/img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <h1>{{ article.title }}</h1>
+                    <h2 class="subheading">{{ article.subtitle }}</h2>
+                    <span class="meta">Posté par {{ article.user.username }} le {{ article.createdAt.date|date("m/d/Y \\à g\\hi") }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {{ article.content|raw }}
+        </div>
+    </div>
+</article>
+
+<hr style="clear: both" class="col-lg-8 col-md-10 mx-auto">
+
+<div class="container">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <h2>Commentaires</h2>
+        {% if comments %}
+            {% for comment in comments %}
+            <div>
+                <p class="mb-0" >{{ comment.content }}</p>
+                <span class="text-muted font-italic h6">Posté par {{ comment.user.username }} le {{ comment.createdAt.date|date("m/d/Y \\à g\\hi") }}</span>
+                <hr>
+            </div>
+            {% endfor %}
+        {% endif %}
+
+        {% if user == false %}
+            <div>
+                <h5 class="text-center">Vous devez etre connecté pour laisser un commentaire.</h5>
+                <button type="button" class="btn btn-outline-dark btn-center"> Se Connecter </button>
+            </div>
+        {% else %}
+            <div>
+                {{ form_start(form) }}
+                <div>
+                    {{ form_label(form.content, 'Votre commentaire :') }}
+                    {{ form_errors(form.content) }}
+                    {{ form_widget(form.content, { 'attr': {'class': 'form-group'}}) }}
+                </div>
+                <div>
+                    {{ form_widget(form.commenter, { 'attr': {'class': ' btn-outline-dark btn-right'}}) }}
+                </div>
+                {{ form_end(form) }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

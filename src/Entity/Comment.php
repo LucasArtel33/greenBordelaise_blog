@@ -39,12 +39,12 @@ class Comment
     private $editedAt;
 
     /**
-     * @ORM\OneToOne(targetEntity="Articles")
+     * @ORM\ManyToOne(targetEntity="Articles")
      */
     private $article;
 
     /**
-     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
      */
     private $user;
 
