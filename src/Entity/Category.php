@@ -22,6 +22,11 @@ class Category
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $subtitle;
+
+    /**
      * @ORM\OneToMany(targetEntity="Articles", mappedBy="categoryId")
      */
     private $articleId;
@@ -73,4 +78,21 @@ class Category
     {
         $this->articleId = $articleId;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSubtitle()
+    {
+        return $this->subtitle;
+    }
+
+    /**
+     * @param mixed $subtitle
+     */
+    public function setSubtitle($subtitle): void
+    {
+        $this->subtitle = $subtitle;
+    }
+
 }

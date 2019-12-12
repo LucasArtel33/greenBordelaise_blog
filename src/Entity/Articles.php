@@ -27,6 +27,12 @@ class Articles
     private $subtitle;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $cover;
+
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime")
@@ -35,7 +41,7 @@ class Articles
 
     public function __construct()
     {
-        $this->createdAt = new \DateTime();
+        $this->createdAt = new \DateTime( 'Europe/Paris');
     }
 
     /**
@@ -185,5 +191,22 @@ class Articles
     {
         $this->category = $category;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCover()
+    {
+        return $this->cover;
+    }
+
+    /**
+     * @param mixed $cover
+     */
+    public function setCover($cover): void
+    {
+        $this->cover = $cover;
+    }
+
 
 }

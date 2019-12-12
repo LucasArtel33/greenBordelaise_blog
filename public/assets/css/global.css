@@ -7,3 +7,17 @@
     float: right;
     margin-bottom: 2%;
 }
+
+.flex{
+    display: flex;
+}
+
+.imgCover{
+    margin-top: 45px;
+    margin-right: 3%;
+    width: 100%;
+}
+
+.imgCover img{
+    width: 100%;
+}

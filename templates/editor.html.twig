@@ -14,6 +14,11 @@
             {{ form_widget(form.subtitle, {'attr': {'class': 'form-group'}}) }}
         </div>
         <div>
+            {{ form_label(form.cover, 'Image de couverture') }}
+            {{ form_errors(form.cover) }}
+            {{ form_widget(form.cover , {'attr': {'class': 'form-group'}}) }}
+        </div>
+        <div>
             {{ form_label(form.content, 'Contenu') }}
             {{ form_errors(form.content) }}
             {{ form_widget(form.content, {'id': 'editor1', 'attr': {'class': 'form-group'}}) }}

@@ -43,7 +43,7 @@
                     <a class="nav-link" href="{{ path('editor') }}">editor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('post',{'id' : 1}) }}">post</a> {# id de test #}
+                    <a class="nav-link" href="{{ path('post',{'id' : 1}) }}">post</a>  {#id de test#}
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Catégories</a>
@@ -53,9 +53,15 @@
                         {% endfor %}
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
+                {% if user == false %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('fos_user_security_login')}}">Connexion</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('fos_user_security_logout')}}">Déconnexion</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
@@ -69,8 +75,10 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>Green Bordelaise</h1>
-                    <span class="subheading">Les plantes j'aime les plantes</span>
+                    {% block title %}
+                        <h1> Green Bordelaise </h1>
+                        <span class="subheading">Les plantes j'aime les plantes</span>
+                    {% endblock %}
                 </div>
             </div>
         </div>
